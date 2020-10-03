@@ -1,0 +1,185 @@
+:root {
+    --ccDarkGray: #303030;
+    --ccSuperDarkGray: #1d1d1d;
+    --ccRed: #FF3B3B;
+    --ccBlue: #1573FF;
+    --ccYellow: #FFFF3F;
+
+    --borderThickness: 20px;
+}
+
+* {
+    font-family: 'Comfortaa', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    transition: all 0.15s ease-in-out;
+}
+
+body {
+    background-color: #F3F3F3;
+    opacity: 1;
+    transition: 1s opacity;
+    height: 100vh;
+    transition: background-color 0.3s ease-in-out;
+}
+.fadeOut {
+    opacity: 0;
+    transition: none;
+}
+
+h1 {
+    font-size: 12vw;
+    color: var(--ccDarkGray);
+    text-align: center;
+    /* margin-left: 10vw;
+    width: 80vw;
+    text-overflow: wrap; */
+}
+
+h2 {
+    font-size: 10vw;
+    color: var(--ccDarkGray);
+    /* margin-left: 10vw;
+    width: 80vw;
+    text-overflow: wrap; */
+}
+
+h3 {
+    font-size: 7vw;
+    color: var(--ccDarkGray);
+    text-align: center;
+    margin-left: 10vw;
+    width: 80vw;
+    text-overflow: wrap;
+}
+
+#header {
+    display: flex;
+    background-color: white;
+    border-bottom: var(--borderThickness) solid var(--ccDarkGray);
+}
+
+#headerLogo {
+    height: 10vw;
+    padding: 3vw;
+}
+
+#logoContainer {
+    order: 0;
+    flex-grow: 1;
+}
+
+.headerText {
+    margin: 0;
+    padding: 3vw;
+}
+
+.headerIcon {
+    height: 10vw;
+}
+
+.headerIcon:active {
+    background-color: var(--ccSuperDarkGray);
+}
+
+input[type = text] {
+    width: 80vw;
+    height: 8vw;
+    padding: 2vw;
+    border-radius: var(--borderThickness);
+    border: none;
+    outline: none;
+    border-bottom: var(--borderThickness) solid var(--ccDarkGray);
+    font-size: 8vw;
+    color: var(--ccDarkGray);
+}
+
+input[type = text]:focus {
+    background-color: #e4e4e4;
+}
+
+input[type = password] {
+    width: 80vw;
+    height: 8vw;
+    padding: 2vw;
+    border-radius: var(--borderThickness);
+    border: none;
+    outline: none;
+    border-bottom: var(--borderThickness) solid var(--ccDarkGray);
+    font-size: 8vw;
+    color: var(--ccDarkGray);
+}
+
+input[type = password]:focus {
+    background-color: #e4e4e4;
+}
+
+button {
+    width: 84vw;
+    height: 14vw;
+    padding: 2vw;
+    border-radius: 16vw;
+    border: none;
+    outline: none;
+    /* border-bottom: var(--borderThickness) solid var(--ccDarkGray); */
+    font-size: 8vw;
+    background-color: #303030;
+    color: white;
+}
+
+.linkButton {
+    width: 80vw;
+    height: 10vw;
+    padding: 2vw;
+    border-radius: 16vw;
+    border: none;
+    outline: none;
+    /* border-bottom: var(--borderThickness) solid var(--ccDarkGray); */
+    background-color: #303030;
+    
+}
+
+.linkButton:active {
+    background-color: var(--ccSuperDarkGray);
+}
+
+a {
+    text-align: center;
+    font-size: 8vw;
+    color: white;
+    text-decoration: none;
+    outline: none;
+    width: 0;
+    height: 0;
+}
+
+.center {
+    margin-left: 8vw;
+}
+
+.space {
+    margin-top: 4vw;
+}
+
+.bigSpace {
+    margin-top: 9vw;
+}
+
+button:active {
+    background-color: var(--ccSuperDarkGray); 
+}
+
+.invertedButton {
+    color: var(--ccDarkGray);
+    background-color: transparent;
+    border: calc(var(--borderThickness) / 2) solid var(--ccDarkGray);
+}
+
+.invertedButton:active {
+    color: white;
+}
+
+.errorMessage {
+    size: 5vw;
+}

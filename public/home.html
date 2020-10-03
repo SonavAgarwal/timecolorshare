@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <link href = "index.css" rel = "stylesheet">
+        <link href = "styles/header.css" rel = "stylesheet">
+
+        <link rel = "icon" href = "images/favicon.ico">
+
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+
+        <script defer src = "js/firebaseInit.js"></script>
+        <script defer src = "js/home.js"></script>
+
+        <title>Color Clock</title>
+    </head>
+
+
+    <body>
+        <script>document.body.className += ' fadeOut'; window.setTimeout(function(){document.body.className = ""}, 500);</script>
+
+        <div id = "header">
+            <div id = "logoContainer">
+                <a href = "/home.html"><img src = "images/colorClockLogo.png" id = "headerLogo"></a>
+            </div>
+
+            <div id = "rightContainer">
+                <a href = "/account.html"><img src = "images/accountButton.png" class = "headerText headerIcon"></a>
+            </div>
+        </div>
+
+        <h3 class = "bigSpace">Join a room</h1>
+        <input placeholder = "room host email" type = "text" class = "center space" id = "hostEmailInput">
+        <!-- <input placeholder = "room name" type = "text" class = "center space" id = "roomNameInput"> -->
+        <button id = "joinButton" class = "center space" onclick = "joinRoom()">Join</button>
+
+        <h3 class = "bigSpace">Open your room</h1>
+        <input placeholder = "partner email" type = "text" class = "center space" id = "partnerEmailInput">
+        <button id = "openMyRoom" class = "center space" onclick = "openMyRoom()">Open</button>
+        <!-- <a href = "/room"><div class = "center space linkButton">Open</div></a> -->
+
+    </body>
+
+</html>

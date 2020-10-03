@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <link href = "index.css" rel = "stylesheet">
+        <link href = "styles/header.css" rel = "stylesheet">
+
+        <link rel = "icon" href = "images/favicon.ico">
+
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+
+        <script defer src = "js/firebaseInit.js"></script>
+        <script defer src = "js/emailVerify.js"></script>
+    </head>
+
+
+    <body>
+        <script>document.body.className += ' fadeOut'; window.setTimeout(function(){document.body.className = ""}, 500);</script>
+
+        <div id = "header">
+            <div id = "logoContainer">
+                <a href = "/home.html"><img src = "images/colorClockLogo.png" id = "headerLogo"></a>
+            </div>
+
+            <div id = "rightContainer">
+                <h2 class = "headerText">Color Clock</h2>
+            </div>
+        </div>
+
+        <h3 class = "bigSpace">We sent you an email.</h1>
+        <h3 class = "space">Please verify your address, then proceed.</h1>
+
+        <h3 class = "space" id = "proceedError" style = "display: none; color: var(--ccRed)">error</h3>
+        <button id = "proceedButton" class = "center space" onclick = "checkVerified()">Proceed</button>
+
+        <h3 class = "space" id = "sendError" style = "display: none; color: var(--ccRed)">error</h3>
+        <button id = "resendButton" class = "center space" onclick = "sendEmail()">Resend Email</button>
+        
+
+    </body>
+
+</html>

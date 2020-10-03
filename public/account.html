@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <link href = "index.css" rel = "stylesheet">
+        <link href = "styles/header.css" rel = "stylesheet">
+
+        <link rel = "icon" href = "images/favicon.ico">
+
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+
+        <script defer src = "js/firebaseInit.js"></script>
+        <script defer src = "js/account.js"></script>
+
+        <title>Color Clock</title>
+    </head>
+
+
+    <body>
+        <script>document.body.className += ' fadeOut'; window.setTimeout(function(){document.body.className = ""}, 500);</script>
+
+        <div id = "header">
+            <div id = "logoContainer">
+                <a href = "/home.html"><img src = "images/colorClockLogo.png" id = "headerLogo"></a>
+            </div>
+
+            <div id = "rightContainer">
+                <h2 class = "headerText">Account</h2>
+            </div>
+        </div>
+
+        <h3 id = "nameDisplay" class = "bigSpace">Name</h1>
+
+        <h3 id = "emailDisplay" class = "bigSpace" style = "text-overflow: clip; overflow: hidden;">Email</h1>
+
+        <h3 class = "bigSpace">Change Name</h1>
+        <input placeholder = "new name" type = "text" class = "center space" id = "nameInput">
+        <button id = "changePasswordButton" class = "center space" onclick = "changeName()">Change</button>
+
+        <h3 class = "bigSpace">Change Password</h1>
+        <input placeholder = "new password" type = "password" class = "center space" id = "passwordInput">        
+        <h3 id = "errorText" class = "space errorMessage" style = "display: none; color: var(--ccRed)">error</h3>
+        <button id = "changePasswordButton" class = "center space" onclick = "changePassword()">Change</button>
+
+
+        <button class = "center space" onclick = "signOut()">Sign Out</button>
+
+    </body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <link href = "index.css" rel = "stylesheet">
+        <link href = "styles/header.css" rel = "stylesheet">
+
+        <link rel = "icon" href = "images/favicon.ico">
+
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+
+        <script defer src = "js/firebaseInit.js"></script>
+        <script defer src = "js/signup.js"></script>
+
+        <title>Color Clock</title>
+    </head>
+
+
+    <body>
+        <script>document.body.className += ' fadeOut'; window.setTimeout(function(){document.body.className = ""}, 500);</script>
+
+        <div id = "header">
+            <div id = "logoContainer">
+                <a href = "/home.html"><img src = "images/colorClockLogo.png" id = "headerLogo"></a>
+            </div>
+
+            <div id = "rightContainer">
+                <h2 class = "headerText">Color Clock</h2>
+            </div>
+        </div>
+
+        <h3 class = "bigSpace">Sign Up!</h1>
+
+        <input placeholder = "name" type = "text" class = "center space" id = "nameInput">
+        <input placeholder = "email" type = "text" class = "center space" id = "emailInput">
+        <input placeholder = "password" type = "password" class = "center space" id = "passwordInput">
+        <h3 id = "errorText" class = "space errorMessage" style = "display: none; color: var(--ccRed)">error</h3>
+        <button id = "signUpButton" class = "center space" onclick = "signUpUser()">Sign Up</button>
+
+        <a href = "/signIn.html"><div class = "center bigSpace linkButton invertedButton">Or Sign In</div></a>
+
+    </body>
+
+</html>
