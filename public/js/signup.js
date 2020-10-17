@@ -13,7 +13,7 @@ function signUpUser() {
 
     var error = document.getElementById("errorText");
 
-    var email = document.getElementById("emailInput").value;
+    var email = normalizeEmail(document.getElementById("emailInput").value);
     var password = document.getElementById("passwordInput").value;
     var userName = document.getElementById("nameInput").value;
 
@@ -23,13 +23,13 @@ function signUpUser() {
         return;
     }
 
-    if (password.length < 10) {
-        error.innerHTML = "password must be longer"
+    if (password.length < 8) {
+        error.innerHTML = "password must be 8 characters or longer"
         error.style.display = "block";
         return;
     }
 
-    if (!email.includes("@")) {
+    if (!email.includes("@") || !email.includes(".")) {
         error.innerHTML = "include a proper email"
         error.style.display = "block";
         return;

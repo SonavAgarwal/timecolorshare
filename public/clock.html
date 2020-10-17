@@ -16,6 +16,7 @@
         <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
 
         <script defer src = "js/firebaseInit.js"></script>
+        <script defer src = "js/email.js"></script>
         <script defer src = "js/clock.js"></script>
 
         <title>Color Clock</title>
@@ -41,13 +42,14 @@
         </div>
 
         <div id = "clockCircle" class = "bigSpace center">
-            <h1 id = "clockTime">0:00</h1>
+            <h1 id = "clockTime">0:00<span id = "ms">0</span></h1>
+            
             <button id = "clockControl" class = "invertedButton" onclick = "handleClockClick()">Stop</button>
         </div>
 
         <button id = "resetButton" class = "center space invertedButton" style = "display: none;" onclick = "reset()">Reset</button>
 
-        <input type = "range" onchange = "updateColor()" id = "colorInput" class = "center" name = "cowbell" min="0" max="300" value = "50" step="1">
+        <input type = "range" onchange = "updateColor()" id = "colorInput" class = "center" name = "cowbell" min="0" max="400" value = "50" step="1">
 
     </body>
 

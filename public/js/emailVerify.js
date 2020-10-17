@@ -17,15 +17,17 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 function checkVerified() {
     firebase.auth().currentUser.reload();
-    if (firebase.auth().currentUser.emailVerified) {
-        window.location.href = "/home.html";
-        
-    } 
-    else {
-        var verifyError = document.getElementById("proceedError");
-        verifyError.innerHTML = "your email is not verified";
-        verifyError.style.display = "block";
-    }
+    setTimeout(function () {
+        if (firebase.auth().currentUser.emailVerified) {
+            window.location.href = "/home.html";
+            
+        } 
+        else {
+            var verifyError = document.getElementById("proceedError");
+            verifyError.innerHTML = "your email is not verified";
+            verifyError.style.display = "block";
+        }
+    }, 250);
 }
 
 function sendEmail() {

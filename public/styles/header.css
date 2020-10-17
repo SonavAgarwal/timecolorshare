@@ -115,6 +115,22 @@ input[type = password]:focus {
     background-color: #e4e4e4;
 }
 
+input[type = email] {
+    width: 80vw;
+    height: 8vw;
+    padding: 2vw;
+    border-radius: var(--borderThickness);
+    border: none;
+    outline: none;
+    border-bottom: var(--borderThickness) solid var(--ccDarkGray);
+    font-size: 8vw;
+    color: var(--ccDarkGray);
+}
+
+input[type = email]:focus {
+    background-color: #e4e4e4;
+}
+
 button {
     width: 84vw;
     height: 14vw;

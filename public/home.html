@@ -6,9 +6,8 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        <link href = "index.css" rel = "stylesheet">
+        <link href = "styles/index.css" rel = "stylesheet">
         <link href = "styles/header.css" rel = "stylesheet">
-
         <link rel = "icon" href = "images/favicon.ico">
 
         <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
@@ -16,35 +15,45 @@
         <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
 
         <script defer src = "js/firebaseInit.js"></script>
+        <script defer src = "js/email.js"></script>
         <script defer src = "js/home.js"></script>
+
+        <link rel="manifest" href="/manifest.json">
 
         <title>Color Clock</title>
     </head>
 
 
     <body>
+        <script>
+            if('serviceWorker' in navigator) {
+              navigator.serviceWorker
+                       .register('/sw.js')
+                       .then(function() { console.log("Service Worker Registered"); });
+            }
+        </script>
+        
         <script>document.body.className += ' fadeOut'; window.setTimeout(function(){document.body.className = ""}, 500);</script>
-
         <div id = "header">
             <div id = "logoContainer">
                 <a href = "/home.html"><img src = "images/colorClockLogo.png" id = "headerLogo"></a>
             </div>
 
+            
             <div id = "rightContainer">
+                
                 <a href = "/account.html"><img src = "images/accountButton.png" class = "headerText headerIcon"></a>
             </div>
         </div>
 
         <h3 class = "bigSpace">Join a room</h1>
-        <input placeholder = "room host email" type = "text" class = "center space" id = "hostEmailInput">
-        <!-- <input placeholder = "room name" type = "text" class = "center space" id = "roomNameInput"> -->
+        <input placeholder = "room host email" type = "email" class = "center space" id = "hostEmailInput">
         <button id = "joinButton" class = "center space" onclick = "joinRoom()">Join</button>
 
         <h3 class = "bigSpace">Open your room</h1>
-        <input placeholder = "partner email" type = "text" class = "center space" id = "partnerEmailInput">
+        <input placeholder = "partner email" type = "email" class = "center space" id = "partnerEmailInput">
         <button id = "openMyRoom" class = "center space" onclick = "openMyRoom()">Open</button>
-        <!-- <a href = "/room"><div class = "center space linkButton">Open</div></a> -->
-
+        
     </body>
 
 </html>

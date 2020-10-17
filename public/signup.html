@@ -16,6 +16,7 @@
         <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
 
         <script defer src = "js/firebaseInit.js"></script>
+        <script defer src = "js/email.js"></script>
         <script defer src = "js/signup.js"></script>
 
         <title>Color Clock</title>
@@ -38,7 +39,7 @@
         <h3 class = "bigSpace">Sign Up!</h1>
 
         <input placeholder = "name" type = "text" class = "center space" id = "nameInput">
-        <input placeholder = "email" type = "text" class = "center space" id = "emailInput">
+        <input placeholder = "email" type = "email" class = "center space" id = "emailInput">
         <input placeholder = "password" type = "password" class = "center space" id = "passwordInput">
         <h3 id = "errorText" class = "space errorMessage" style = "display: none; color: var(--ccRed)">error</h3>
         <button id = "signUpButton" class = "center space" onclick = "signUpUser()">Sign Up</button>

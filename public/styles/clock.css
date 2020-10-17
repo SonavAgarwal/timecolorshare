@@ -60,7 +60,13 @@ input[type=range]:focus {
     height: calc(calc(var(--borderThickness) * 2) + 5vw);
     cursor: pointer;
     /* box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; */
-    background: linear-gradient(90deg, var(--ccRed), var(--ccYellow), var(--ccBlue), var(--ccRed));
+    background: linear-gradient(90deg, white, var(--ccRed), var(--ccYellow), var(--ccBlue), var(--ccRed));
     border-radius: 3vw;
     border: var(--borderThickness) solid var(--ccDarkGray);
   }
+
+#ms {
+    font-size: 10vw; 
+    margin-top: 3px;
+    color: var(--ccDarkGray);
+}

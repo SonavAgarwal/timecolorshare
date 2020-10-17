@@ -18,6 +18,7 @@ var roomData;
 var db = firebase.firestore();
 
 var colors = [
+    [255, 255, 255],
     [255, 29, 29],
     [255, 255, 63],
     [21, 115, 255]
@@ -42,7 +43,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 			clockHostUID = firebase.auth().currentUser.uid;
 		} else {
 			// console.log("2")
-			db.collection("emailToUID").doc(clockEmail).get().then(function(doc) {
+			db.collection("emailToUID").doc(normalizeEmail(clockEmail)).get().then(function(doc) {
 				clockHostUID = doc.data().uid;
 			});
 		}
@@ -84,14 +85,14 @@ function renderRoom() {
 	displayButtons();
 	
 	if (roomData.reset) {
-        setClockTime("00:00");
+        setClockTime("00:00 0");
         return;
     }
 
     if (roomData.running) {
         renderTime();
         window.clearInterval(clockInterval);
-        clockInterval = window.setInterval(renderTime, 1000);
+        clockInterval = window.setInterval(renderTime, 100);
     } else {
         window.clearInterval(clockInterval);
     }
@@ -117,8 +118,9 @@ function renderTime() {
 }
 
 function setClockTime(str) {
-    document.getElementById("clockTime").innerHTML = str;
-    document.getElementById("clockTime").style.fontSize = (130 / str.length) + 'vw';
+    var newStr = str.split(" ")
+    document.getElementById("clockTime").innerHTML = newStr[0] + "<span id = 'ms'>" + newStr[1] + "</span>";
+    document.getElementById("clockTime").style.fontSize = (120 / newStr[0].length) + 'vw';
 }
 
 function msToTime(duration) {
@@ -131,8 +133,8 @@ function msToTime(duration) {
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     seconds = (seconds < 10) ? "0" + seconds : seconds;
 
-    if (hours == 0) return minutes + ":" + seconds /* + "." + milliseconds*/ ;
-    return hours + ":" + minutes + ":" + seconds /* + "." + milliseconds*/ ;
+    if (hours == 0) return minutes + ":" + seconds + " " + milliseconds ;
+    return hours + ":" + minutes + ":" + seconds + " " + milliseconds ;
 }
 
 function handleClockClick() {
@@ -165,7 +167,7 @@ function reset() {
     }, {
         merge: true
     }).then(function() {
-        setClockTime("00:00");
+        setClockTime("00:00 0");
     });
 }
 
@@ -195,9 +197,14 @@ function displayColor() {
         endColors = colors[2];
 
 
-    } else {
+    } else if (colorSlider.value <= 300) {
         startColors = colors[2];
-        endColors = colors[0];
+        endColors = colors[3];
+
+
+    } else {
+        startColors = colors[3];
+        endColors = colors[1];
     }
 
     for (var i = 0; i < 3; i++) {
