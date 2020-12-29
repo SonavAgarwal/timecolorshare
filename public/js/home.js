@@ -1,4 +1,8 @@
 
+if (!window.matchMedia('(display-mode: standalone)').matches) {  
+    document.getElementById("installPrompt").style.display = "block";
+}
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         // console.log(user.uid);

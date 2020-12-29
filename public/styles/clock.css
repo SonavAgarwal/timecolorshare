@@ -1,6 +1,6 @@
 #clockCircle {
     border-radius: 100%;
-    margin-top: 30vw;
+    margin-top: 8vw;
     width: 80vw;
     height: 80vw;
     border: var(--borderThickness) solid var(--ccDarkGray);
@@ -63,7 +63,7 @@ input[type=range]:focus {
     background: linear-gradient(90deg, white, var(--ccRed), var(--ccYellow), var(--ccBlue), var(--ccRed));
     border-radius: 3vw;
     border: var(--borderThickness) solid var(--ccDarkGray);
-  }
+}
 
 #ms {
     font-size: 10vw; 
